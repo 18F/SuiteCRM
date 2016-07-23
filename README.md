@@ -1,9 +1,9 @@
-##Running SuiteCRM 7.6.6 on Cloud Foundry (e.g. cloug.gov)
+##Running SuiteCRM 7.6.6 on Cloud Foundry (e.g. cloud.gov)
 
 
 1. Clone this repository
 2. Push this application to your Cloud Foundry host, but don't start it. `cf push APP_NAME --no-start`, for example `cf push crm --no-start`
-3. If you don't already have a Clound Foundry MySQL service instance (check via `cf services`), create one:
+3. If you don't already have a Cloud Foundry MySQL service instance (check via `cf services`), create one:
   - Take a look at the available services via `cf marketplace`
   - Create your service via `cf create-service SERVICE_NAME PLAN_NAME MY_SERVICE_NAME`, for example `cf create-service aws-rds shared-mysql cg-crm-db`
 4. Bind your MySQL service to your Cloud Foundry application via `cf bind-service APP_NAME MY_SERVICE_NAME`, e.g. `cf bind-service crm cg-crm-db`.

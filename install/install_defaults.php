@@ -37,7 +37,8 @@
  * display the words  "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  ********************************************************************************/
 
-   
+       require_once(__DIR__.'/../config_db.php');
+       $db_cred = get_db_service_credentials();
 
        $installer_defaults = array(
             'language' => 'en_us',
@@ -51,9 +52,9 @@
             'setup_num_lic_oc' => '0',
             'install_type' => 'typical',
             'setup_db_type' => 'mysql',
-            'setup_db_host_name' => '',
+            'setup_db_host_name' => $db_cred->host,
             'setup_db_host_instance' => 'SQLEXPRESS',
-            'setup_db_database_name' => 'suitecrm',
+            'setup_db_database_name' => $db_cred->db_name,
             'setup_db_sugarsales_user' => '',
             'setup_db_sugarsales_password' => '',
             'setup_db_sugarsales_password_retype' => '',
@@ -61,8 +62,8 @@
             'setup_db_create_database' => true,
             'setup_db_drop_tables' => false,
             'setup_db_username_is_privileged' => true,
-            'setup_db_admin_user_name' => '',
-            'setup_db_admin_password' => '',
+            'setup_db_admin_user_name' => $db_cred->username,
+            'setup_db_admin_password' => $db_cred->password,
             'setup_db_provide_own_user' => false,
             'dbConfig_submitted' => false,
             'demoData' => 'no',
@@ -99,5 +100,4 @@
             'dbUSRData' => 'same',
 
         );
-        
 ?>

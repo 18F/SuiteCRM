@@ -70,6 +70,11 @@ if (is_file('config.php')) {
     require_once 'config.php'; // provides $sugar_config
 }
 
+// Now load bound cloud foundry database service connection info 
+//   and credentials into $sugar_config['db_config']
+require_once 'config_db.php';
+inject_db_service_credentials_into_config();
+
 // load up the config_override.php file.  This is used to provide default user settings
 if (is_file('config_override.php')) {
     require_once 'config_override.php';

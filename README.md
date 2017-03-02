@@ -2,6 +2,7 @@
 
 
 1. Clone this repository
+  - Navigate into the cloned directory. `cd cf-example-suitecrm`
 2. Push this application to your Cloud Foundry host, but don't start it. `cf push APP_NAME --no-start`, for example `cf push crm --no-start`
 3. If you don't already have a Cloud Foundry MySQL service instance (check via `cf services`), create one:
   - Take a look at the available services via `cf marketplace`
